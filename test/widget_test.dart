@@ -7,8 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('renders the keypad and shows zero on launch',
-      (WidgetTester tester) async {
+  testWidgets('renders the keypad and shows zero on launch', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const CalculatorApp());
 
     expect(find.byKey(const Key('display')), findsOneWidget);

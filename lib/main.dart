@@ -49,8 +49,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
             children: <Widget>[
               Container(
                 alignment: Alignment.centerRight,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 24, horizontal: 12),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 24,
+                  horizontal: 12,
+                ),
                 child: Text(
                   _model.display,
                   key: const Key('display'),
@@ -64,7 +66,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 ),
               ),
               const SizedBox(height: 8),
-              Expanded(child: _Keypad(model: _model, onAction: _run)),
+              Expanded(
+                child: _Keypad(model: _model, onAction: _run),
+              ),
             ],
           ),
         ),
@@ -106,9 +110,7 @@ class _Keypad extends StatelessWidget {
         _Key('3', () => model.inputDigit('3')),
         _Key('0', () => model.inputDigit('0')),
       ],
-      <_Key>[
-        _Key('.', model.inputDecimalPoint),
-      ],
+      <_Key>[_Key('.', model.inputDecimalPoint)],
     ];
 
     return Column(
@@ -126,12 +128,12 @@ class _Keypad extends StatelessWidget {
                             style: key.emphasis
                                 ? null
                                 : FilledButton.styleFrom(
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .secondaryContainer,
-                                    foregroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .onSecondaryContainer,
+                                    backgroundColor: Theme.of(
+                                      context,
+                                    ).colorScheme.secondaryContainer,
+                                    foregroundColor: Theme.of(
+                                      context,
+                                    ).colorScheme.onSecondaryContainer,
                                   ),
                             onPressed: () => onAction(key.onTap),
                             child: Text(
